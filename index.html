@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// alert("Hello world");
+
+		var1 = 10;
+		var2 = "Supakorn";
+		var var3 = 12.5;	//global
+		let var4 = "Sudapan";	//local	
+
+		result = var1 + var3;
+		result = var1 + var2;
+		
+		//alert(result);
+
+		array1 = [1,2,3];
+		array2 = [1,2,
+						["A","B"]
+				];
+		//alert(array2);
+		console.log(array2);
+
+		json1 = {	"name":"Supakorn",
+					"sname":"Sudapan"
+				};
+				json2 = {	
+					"name":{
+						"usar1":"Johh",
+						"usar2":"Ben"
+					},
+					"sname":""
+				};
+		console.log(json2);
+
+		function add(A,B){
+			A = parseInt (A);
+			B = parseFloat (B);
+			return A+B;
+		};
+
+		console.log(add("10.1",20.3));
+	</script>
+</head>
+<body>
+	<input id="in1"></input>
+	<button id="bt1" onclick="getData()">Send</button>
+	<br>
+	<label id="lb1"></label>
+
+	<hr>
+	jQuery library <br>
+	<input id="in2"></input>
+	<button id="bt2" onclick="getData()">Send</button>
+	<br>
+	<label id="lb2"></label>
+</body>
+</html>
+
+<script src="js/main.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+		$("#bt2").click(function(){
+			val = $("#in2").val();
+			$("#lb2").html(val);
+		});
+
+		$("#lb2").load("php/cal.php?e=1&numA=10&numB=14.3");
+
+	});//jQuery Handle,Ready
+
+</script>
